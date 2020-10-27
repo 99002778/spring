@@ -6,21 +6,21 @@ import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="studenttrail")
-@TypeAlias("Studenttrail")
+@TypeAlias("Student")
 public class Student {
  @Id
 	int id;
 	int age;
  String name,dept;
  @Autowired
- Address adress;
+ Address address;
 
- public Address getAdress() {
-	return adress;
+ public Address getAddress() {
+	return address;
 }
 
- public void setAdress(Address adress) {
-	this.adress = adress;
+ public void setAddress(Address address) {
+	this.address = address;
 }
 
  public Student(int id, int age, String name, String dept) {
@@ -61,7 +61,7 @@ public void setDept(String dept) {
 
 @Override
 public String toString() {
-	return "Student [id=" + id + ", age=" + age + ", name=" + name + ", dept=" + dept + ", adress=" + adress + "]";
+	return "Student [id=" + id + ", age=" + age + ", name=" + name + ", dept=" + dept + ", address=" + address + "]";
 }
  
 
