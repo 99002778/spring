@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+         focus{
+             color: red;
+         }
+     </style>
+     <script>
+         function validateData(){
+             var lowerCase=/[a z]/g;
+             var upperCase=/[A z]/g;
+             var numbers=/[0 9]/g;
+             var special=/[!@#$%^&*()]/g;
+             if(document.getElementById("Uname").value.length<5 ||document.getElementById("Uname").value.length>15)
+             {
+                alert("length should greater than 5 and lessthan 15");
+             }
+             else
+             {
+                 if(document.getElementById("Pass").value.match(/^[A-Za-z]\w{7,14}$/))
+                    {
+                       
+                        if(!document.getElementById("Uemail").value.match(/[a-z A-Z 0-9]+[@]+[a-z]+[.]+[a-z]/)) 
+                        {
+                            alert("Email id is not valid.");
+                        }
+                        else
+                        {
+                            if(document.getElementById("Phone").value.length!=10)
+                            {
+                                alert("Phone Number must be length of 10 digits");
+                            }
+                            else
+                            {
+                                alert("User Registered Sucessfully");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        alert("Invalid password, please use all the characters.");
+                    }
+             }
+         }
+     </script>
+ </head>
+ <body>
+     <input type="text" id="Uname">
+     <input type="password" id="Pass">
+     <input type="email" id="Uemail">
+     <input type="number" id="Phone">
+     <input type="submit" onclick="validateData()">
+
+ </body>
+ </html>

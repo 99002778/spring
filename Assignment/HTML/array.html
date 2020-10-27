@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../Scripts/common.js"></script>
+    <script>
+        let Laptops=["HP","DELL","LENOVO","MICROSOFTSURF","MI"];
+        let Mobiles=["MI","POCO","SAMSUNG","NOKIA","REALME","LENOVO"];
+        let tV=["ONEPLUS","MI","SONY"];
+         let dataDisplay=()=>{
+             let lis=$("ulis");
+            lis.innerHTML=" "
+
+             if($("selid").value=="laptop"){
+                for(let varabile=0;varabile<Laptops.length;varabile++)
+                    lis.innerHTML+="<li>"+Laptops[varabile]+"</li>"
+             }
+             else if($("selid").value=="mobile"){
+                for(let varabile=0;varabile<Mobiles.length;varabile++)
+                    lis.innerHTML+="<li>"+Mobiles[varabile]+"</li>"
+             }
+             else if($("selid").value=="tv"){
+                for(let varabile=0;varabile<tV.length;varabile++)
+                    lis.innerHTML+="<li>"+tV[varabile]+"</li>"
+             }
+         }
+    </script>
+</head>
+<body>
+    <div>
+        Select any Option:
+        <select id="selid" onchange="dataDisplay()">
+        <option value="None">NONE</option>
+        <option value="laptop">Laptops</option>
+        <option value="mobile">Mobiles</option>
+        <option value="tv">Tv</option>
+        </select>
+    </div>
+    <div>
+        <ul id="ulis"></ul>
+    </div>
+</body>
+</html>
